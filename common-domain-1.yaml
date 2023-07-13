@@ -1,0 +1,157 @@
+components:
+  parameters:
+    page:
+      in: query
+      name: page
+      required: true
+      schema:
+        type: integer
+        format: int32
+        minimum: 0
+
+    pageSize:
+      in: query
+      name: pageSize
+      required: true
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 1000
+
+    sortBy:
+      in: query
+      name: sortBy
+      schema:
+        type: string
+        minLength: 0
+        maxLength: 128
+
+    sortOrder:
+      in: query
+      name: sortOrder
+      schema:
+        type: string
+        description: asc | desc
+        minLength: 0
+        maxLength: 32
+        default: asc
+
+  responses:
+    204:
+      description: No Content
+
+    400:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    401:
+      description: Unauthenticated
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    403:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    404:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    409:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    412:
+      description: Precondition Failed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    422:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    500:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          readOnly: true
+          nullable: true
+          minLength: 0
+          maxLength: 128
+        error:
+          type: string
+          readOnly: true
+          nullable: true
+          minLength: 0
+          maxLength: 512
+        message:
+          type: string
+          readOnly: true
+          minLength: 0
+          maxLength: 4192
+
+    PageHeader:
+      type: object
+      properties:
+        page:
+          type: integer
+          format: int32
+          readOnly: true
+        pageSize:
+          type: integer
+          format: int32
+          readOnly: true
+        totalItems:
+          type: integer
+          format: int64
+          readOnly: true
+          nullable: true
+        hasNext:
+          type: boolean
+          readOnly: true
+          nullable: true
+        hasPrevious:
+          type: boolean
+          readOnly: true
+          nullable: true
+        sortBy:
+          type: string
+          readOnly: true
+          nullable: true
+          minLength: 0
+          maxLength: 128
+        sortOrder:
+          type: string
+          description: asc | desc
+          readOnly: true
+          nullable: true
+          minLength: 0
+          maxLength: 32
