@@ -32,10 +32,10 @@ components:
       name: sortOrder
       schema:
         type: string
-        description: asc | desc
+        description: ASC | DESC
         minLength: 0
         maxLength: 32
-        default: asc
+        default: ASC
 
   responses:
     204:
