@@ -150,7 +150,7 @@ components:
           maxLength: 128
         sortOrder:
           type: string
-          description: asc | desc
+          description: ASC | DESC
           readOnly: true
           nullable: true
           minLength: 0
