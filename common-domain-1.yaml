@@ -38,58 +38,58 @@ components:
         default: ASC
 
   responses:
-    204:
+    '204':
       description: No Content
 
-    400:
+    '400':
       description: Bad Request
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
-    401:
+    '401':
       description: Unauthenticated
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
-    403:
+    '403':
       description: Unauthorized
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
-    404:
+    '404':
       description: Not Found
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    409:
+    '409':
       description: Conflict
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
-    412:
+    '412':
       description: Precondition Failed
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
-    422:
+    '422':
       description: Unprocessable Entity
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
-    500:
+    '500':
       description: Internal Server Error
       content:
         application/json:
