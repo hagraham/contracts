@@ -39,58 +39,58 @@ components:
 
   responses:
     '204':
-      description: No Content
+      description: 'No Content'
 
     '400':
-      description: Bad Request
+      description: 'Bad Request'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
     '401':
-      description: Unauthenticated
+      description: 'Unauthenticated'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
     '403':
-      description: Unauthorized
+      description: 'Unauthorized'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
     '404':
-      description: Not Found
+      description: 'Not Found'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
     '409':
-      description: Conflict
+      description: 'Conflict'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
     '412':
-      description: Precondition Failed
+      description: 'Precondition Failed'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
     '422':
-      description: Unprocessable Entity
+      description: 'Unprocessable Entity'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
 
     '500':
-      description: Internal Server Error
+      description: 'Internal Server Error'
       content:
         application/json:
           schema:
@@ -98,6 +98,7 @@ components:
 
   schemas:
     Error:
+      description: 'Common error envelope.'
       type: object
       properties:
         code:
@@ -119,6 +120,7 @@ components:
           maxLength: 4192
 
     PageHeader:
+      description: 'Common page header.'
       type: object
       properties:
         page:
