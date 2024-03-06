@@ -102,22 +102,29 @@ components:
       type: object
       properties:
         code:
+          description: 'Technical error code.'
           type: string
-          readOnly: true
-          nullable: true
           minLength: 0
           maxLength: 128
-        error:
-          type: string
-          readOnly: true
           nullable: true
+          readOnly: true
+        error:
+          description: 'Shorter error summary.'
+          type: string
           minLength: 0
           maxLength: 512
-        message:
-          type: string
+          nullable: true
           readOnly: true
-          minLength: 0
+        message:
+          description: 'Longer error description.'
           maxLength: 4192
+          minLength: 0
+          readOnly: true
+          type: string
+      example:
+        code: '12345'
+        error: 'Shorter error summary.'
+        message: 'Longer error description.        
 
     PageHeader:
       description: 'Common page header.'
