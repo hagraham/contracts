@@ -124,7 +124,7 @@ components:
       example:
         code: '12345'
         error: 'Shorter error summary.'
-        message: 'Longer error description.        
+        message: 'Longer error description.'        
 
     PageHeader:
       description: 'Common page header.'
